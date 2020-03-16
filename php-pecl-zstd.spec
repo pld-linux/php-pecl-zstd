@@ -16,6 +16,7 @@ URL:		https://pecl.php.net/package/zstd/
 BuildRequires:	%{php_name}-cli
 BuildRequires:	%{php_name}-devel
 BuildRequires:	rpmbuild(macros) >= 1.666
+BuildRequires:	zstd-devel
 %{?requires_php_extension}
 Provides:	php(%{modname}) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,10 +28,12 @@ library.
 %prep
 %setup -qc
 mv %{modname}-%{version}/* .
+rm -r zstd
 
 %build
 phpize
-%configure
+%configure \
+	--with-libzstd
 %{__make}
 
 # simple module load test
@@ -65,5 +68,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
+%doc README.md
 %config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
 %attr(755,root,root) %{php_extensiondir}/%{modname}.so
