@@ -55,6 +55,9 @@ cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
 extension=%{modname}.so
 EOF
 
+# no -devel yet
+%{__rm} $RPM_BUILD_ROOT%{php_includedir}/ext/zstd/php_zstd.h
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
