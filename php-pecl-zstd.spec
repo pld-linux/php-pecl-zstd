@@ -18,6 +18,7 @@ BuildRequires:	%{php_name}-devel
 BuildRequires:	rpmbuild(macros) >= 1.666
 BuildRequires:	zstd-devel
 %if %{with tests}
+BuildRequires:	%{php_name}-openssl
 BuildRequires:	%{php_name}-pcre
 %endif
 %{?requires_php_extension}
