@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests		# build without tests
+%bcond_without	tests_online	# build without online tests
 
 %define		php_name	php%{?php_suffix}
 %define		modname	zstd
@@ -75,6 +76,7 @@ phpize
 grep %{modname} modules.log
 
 %if %{with tests}
+%{!?tests_online:SKIP_ONLINE_TESTS=1} \
 ./run-tests.sh --show-diff
 %endif
 
