@@ -3,6 +3,10 @@
 %bcond_without	tests		# build without tests
 %bcond_without	tests_online	# build without online tests
 
+%if 0%{?_pld_builder:1}
+%undefine	with_tests_online
+%endif
+
 %define		php_name	php%{?php_suffix}
 %define		modname	zstd
 Summary:	%{modname} - Zstandard extension
