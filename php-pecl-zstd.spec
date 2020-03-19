@@ -39,7 +39,7 @@ cat <<'EOF' > run-tests.sh
 export NO_INTERACTION=1 REPORT_EXIT_STATUS=1 MALLOC_CHECK_=2
 exec %{__make} test \
 	PHP_EXECUTABLE=%{__php} \
-	PHP_TEST_SHARED_SYSTEM_EXTENSIONS="" \
+	PHP_TEST_SHARED_SYSTEM_EXTENSIONS="openssl" \
 	RUN_TESTS_SETTINGS="-q $*"
 EOF
 chmod +x run-tests.sh
