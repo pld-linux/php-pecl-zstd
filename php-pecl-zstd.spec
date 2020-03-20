@@ -64,6 +64,12 @@ while read line; do
 	xfail $t
 done << 'EOF'
 zstd_compress(): compress level [tests/008.phpt]
+%ifarch x32
+zstd_compress(): basic functionality [tests/001.phpt]
+zstd_compress(): variation [tests/003.phpt]
+namespace: Zstd\compress()/uncompress() [tests/007.phpt]
+zstd_compress(): compress level [tests/009.phpt]
+%endif
 EOF
 
 %build
