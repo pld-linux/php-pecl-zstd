@@ -1,3 +1,5 @@
+https://github.com/kjdev/php-ext-zstd/commit/729d8401bfba37a3ee558cd051a1a525b5301dbd
+
 002- ArgumentCountError: zstd_compress() expects at least 1 parameter, 0 given
 002+ ArgumentCountError: zstd_compress() expects at least 1 argument, 0 given
 
