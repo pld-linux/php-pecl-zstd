@@ -1,0 +1,25 @@
+002- ArgumentCountError: zstd_compress() expects at least 1 parameter, 0 given
+002+ ArgumentCountError: zstd_compress() expects at least 1 argument, 0 given
+
+--- php80-pecl-zstd-0.9.0/tests/002_b.phpt~	2020-06-04 08:14:49.000000000 +0300
++++ php80-pecl-zstd-0.9.0/tests/002_b.phpt	2021-01-03 11:18:38.017531735 +0200
+@@ -29,7 +29,7 @@
+ ===Done===
+ --EXPECTF--
+ *** Testing zstd_compress() function with Zero arguments ***
+-ArgumentCountError: zstd_compress() expects at least 1 parameter, 0 given in %s:%d
++ArgumentCountError: zstd_compress() expects at least 1 %s, 0 given in %s:%d
+ Stack trace:
+ #0 %s(%d): zstd_compress()
+ #1 {main}
+--- php80-pecl-zstd-0.9.0/tests/005_b.phpt~	2020-06-04 08:14:49.000000000 +0300
++++ php80-pecl-zstd-0.9.0/tests/005_b.phpt	2021-01-03 11:19:37.230586143 +0200
+@@ -33,7 +33,7 @@
+ ===DONE===
+ --EXPECTF--
+ *** Testing zstd_uncompress() function with Zero arguments ***
+-ArgumentCountError: zstd_uncompress() expects exactly 1 parameter, 0 given in %s:%d
++ArgumentCountError: zstd_uncompress() expects exactly 1 %s, 0 given in %s:%d
+ Stack trace:
+ #0 %s(%d): zstd_uncompress()
+ #1 {main}

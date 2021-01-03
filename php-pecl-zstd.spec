@@ -17,6 +17,7 @@ License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	https://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	6a3b741d39c7bccae0f20a42b03bfd6c
+Patch0:		php8-argument.patch
 URL:		https://pecl.php.net/package/zstd/
 BuildRequires:	%{php_name}-cli
 BuildRequires:	%{php_name}-devel
@@ -37,6 +38,7 @@ library.
 %prep
 %setup -qc
 mv %{modname}-%{version}/* .
+%patch0 -p1
 rm -r zstd
 
 cat <<'EOF' > run-tests.sh
