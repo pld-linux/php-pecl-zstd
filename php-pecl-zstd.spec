@@ -11,12 +11,12 @@
 %define		modname	zstd
 Summary:	%{modname} - Zstandard extension
 Name:		%{php_name}-pecl-%{modname}
-Version:	0.11.0
+Version:	0.13.3
 Release:	1
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	https://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	2fa9b1c19c3926f5214e6965a6169200
+# Source0-md5:	a1064d2232126c45ca29b454f9e583bf
 URL:		https://pecl.php.net/package/zstd/
 BuildRequires:	%{php_name}-cli
 BuildRequires:	%{php_name}-devel
