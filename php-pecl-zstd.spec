@@ -19,7 +19,7 @@ Source0:	https://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	a1064d2232126c45ca29b454f9e583bf
 URL:		https://pecl.php.net/package/zstd/
 BuildRequires:	%{php_name}-cli
-BuildRequires:	%{php_name}-devel
+BuildRequires:	%{php_name}-devel >= 4:7.0
 BuildRequires:	rpmbuild(macros) >= 1.666
 BuildRequires:	zstd-devel
 %if %{with tests}
