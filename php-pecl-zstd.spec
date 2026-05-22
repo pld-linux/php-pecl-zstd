@@ -11,12 +11,12 @@
 %define		modname	zstd
 Summary:	%{modname} - Zstandard extension
 Name:		%{php_name}-pecl-%{modname}
-Version:	0.13.3
-Release:	1
+Version:	0.15.2
+Release:	2
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	https://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	a1064d2232126c45ca29b454f9e583bf
+# Source0-md5:	1ddb62f5de64bf7c66610858f4c8d87e
 URL:		https://pecl.php.net/package/zstd/
 BuildRequires:	%{php_name}-cli
 BuildRequires:	%{php_name}-devel >= 4:7.0
@@ -63,7 +63,6 @@ while read line; do
 	t=${line##*\[}; t=${t%\]}
 	xfail $t
 done << 'EOF'
-zstd_compress(): compress level [tests/008.phpt]
 %ifarch x32
 zstd_compress(): basic functionality [tests/001.phpt]
 zstd_compress(): variation [tests/003.phpt]
